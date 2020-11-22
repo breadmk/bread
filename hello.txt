@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 hello world
 2
 3
+=======
+hello world
+>>>>>>> parent of 8f514a1... two
+sad
