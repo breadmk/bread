@@ -1,0 +1,10 @@
+-- 사용할 파이썬으로 이동
+C:\Python\python37
+-- 가상환경 생성
+python -m venv D:\study\test1
+-- 가상환경 실행 (가상환경은 os에 여러 파이썬이 있어도 각자 개발할수있게 도와주는것)
+cd D:\study\test1\Scripts
+activate.bat
+( )  있으면 가상환경이 활성화 됨.
+-- 가상환경 종료
+deactivate.bat
