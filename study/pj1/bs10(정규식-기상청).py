@@ -31,16 +31,22 @@ for location in locations:
            r'<wf>(.+?)</wf>.+?'
            r'<tmn>(.+?)</tmn>.+?'
            r'<tmx>(.+?)</tmx>.+?'
-           r'<reliability></reliability>.+?'
+           r'<reliability>(.*?)</reliability>.+?'
            r'<rnSt>(.+?)</rnSt>',
            data,re.DOTALL)
-       print(temps)
+       # print(temps)
+       mode=temps[0][0]
+       tmEf = temps[0][1]
+       wf = temps[0][2]
+       tmn = temps[0][3]
+       tmx = temps[0][4]
+       reliability = temps[0][5]
+       rnSt = temps[0][6]
+       str = '{},{},{},{},{},{},{},{},{}'
+       print(str.format(province,city,mode,tmEf,wf,tmn,tmx,reliability,rnSt))
 
 
-       break
 
-
-    break
 
 # a= [('서울ㆍ인천ㆍ경기도', '서울'),('서울ㆍ인천ㆍ경기도', '인천')]
 # alist[0]=('서울ㆍ인천ㆍ경기도', '서울')
