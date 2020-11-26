@@ -25,7 +25,8 @@ class DBManager:
         self.con.close()
 
     def selectAll(self):
-        sql="select * from webtoon order by no"
+        # sql="select * from webtoon order by no"
+        sql = "select * from webtoon"
         self.cur.execute(sql)
         rows = self.cur.fetchall()
         # self.cur.execute(sql)
@@ -33,13 +34,15 @@ class DBManager:
         # for row in rows:
         #     print(row[0],row[1],row[2],row[3])
         for row in rows:
-            print(row)
+            print(row[0], row[1], row[2], row[3])
+            # print(row)
     def selectRating(self,rating):
         sql="select * from webtoon where rating>={}"
         self.cur.execute(sql.format(rating))
         rows = self.cur.fetchall()
         for row in rows:
             print(row[0], row[1], row[2], row[3])
+            # print(row)
     def insert(self,title,rating,regdate):
         sql="insert into webtoon values (webtoon_seq.nextval,'{}','{}','{}')"
         self.cur.execute(sql.format(title,rating,regdate))
@@ -56,8 +59,10 @@ class DBManager:
 
 
 
-# d1=DBManager()
+d1=DBManager()
+d1.selectAll()
 # d1.selectRating(9.95)
+# d1.insert("마지막화!","9.95","2020.11.26")
 # d1.updateRegdate(9.95,'2020.11.24')
 # d1.deleteRating(8)
 # d1.selectAll()
