@@ -14,6 +14,7 @@ def makeData(pageurl):
     # materal = materal.replace('   ', '')
     # print(materal)
     view_step=d.find('div',class_='view_step')
+
     # print(view_step)
     # divs = view_step.find_all('div',{'class':'media-body'})
     divs = view_step.find_all('div',class_='media-body')
@@ -26,7 +27,7 @@ def makeData(pageurl):
         # str = "{}\n::{}\n".format(title,rece)
         # f.write(str)
         print(rece)
-       
+
 # with open('data\\recipe.txt',mode='w',encoding='utf-8') as f:
 
 
