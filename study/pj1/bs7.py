@@ -20,7 +20,7 @@ import json
 #         f.write(str)
 
 #----------------------------------다음에서 증권 긁기------------------------------------
-# # import fake_useragent   # 403 에러가 나와서 fake_useragent 를 사용해서 숨겨서 접근
+import fake_useragent   # 403 에러가 나와서 fake_useragent 를 사용해서 숨겨서 접근
 # from fake_useragent import UserAgent
 # with open('data\\money.csv',mode='w',encoding='utf-8')as f:
 #     ua=UserAgent()      #UserAgent ua= new UserAgent() 자바소스로 보면 이 소스임. 객체생성.

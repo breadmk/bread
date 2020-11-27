@@ -59,16 +59,25 @@
 #     print(tit.text)
 
 #-------------------------------------
-from selenium import webdriver
-from bs4 import BeautifulSoup
-import time
+import fake_useragent   # 403 에러가 나와서 fake_useragent 를 사용해서 숨겨서 접근
+from fake_useragent import UserAgent
 import requests
-url ='https://finance.daum.net/'
-res = requests.get(url)
-time.sleep(1)
+from bs4 import BeautifulSoup
+import json
+ua=UserAgent()
+headers={'user-agent':ua.chrome,'referer' : 'https://finance.daum.net/'}
+url='https://finance.daum.net/content/news/news_top'
+res = requests.get(url,headers=headers)
 # print(res)
 dom = BeautifulSoup(res.text,'lxml')
-print(dom.text)
+# print(dom.text)
+news = dom.text
+json_new = json.loads(news)
+# print(news)
+for i in json_new:
+    print(i['title'])
+# for title in dom.text:
+#     print(title)
 # news = dom.select('#boxTodayNews > div.halfB > ul.fl > li > a')
 # print(news)
 # for newstext in news:
