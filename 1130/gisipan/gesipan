@@ -1,0 +1,37 @@
+project : geispan
+
+테이블  : gesipan
+
+항목)
+기본키 : id
+작성자 : name
+제 목 : title (text)
+내 용 : content (textarea)
+비 번 : pwd  (password)
+성 별 : sung (radio)
+취 미 : hobby (check box)
+년 도  : birth(select)
+작성일 : writhday
+
+명령 프롬포트 -> txt -> mysql -uroot -p1234 -> 확장자 .bat
+mysql -uroot -p1234
+use pkc 
+
+create table gesipan(
+id int auto_increment primary key,
+name char(10),
+title varchar(100),
+pwd char(10),
+content text,
+sung int,
+hobby varchar(20),
+birth char(4),
+writeday date
+);
+## radio , checkbox , value
+순서 -> write.jsp -> write_ok.jsp -> list.jsp
+
+list => 이름,제목,성별,작성일
+content => 이름,제목,내용,성별,취미,출생년도,작성일
+
+checked 속성 사용
