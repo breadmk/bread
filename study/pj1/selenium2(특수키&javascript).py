@@ -25,16 +25,16 @@ from  selenium.webdriver.common.keys import Keys        # 특수 키 사용
 #-----------------------------------------------------------------------------
 
 
-# driver=webdriver.Chrome('data\\chromedriver')   # 브라우져 접속
-# url='https://www.10000recipe.com/recipe/list.html'                # 접속 url
-# driver.get(url)                                 # 해당 페이지 접속
+driver=webdriver.Chrome('data\\chromedriver')   # 브라우져 접속
+url='https://www.10000recipe.com/recipe/list.html'                # 접속 url
+driver.get(url)                                 # 해당 페이지 접속
 # id_search_category > table > tbody > tr:nth-child(1) > td > div > div:nth-child(1) > a:nth-child(2)
-# a2=driver.find_element_by_css_selector('#id_search_category div.cate_list > a:nth-child(2)')
+a2=driver.find_element_by_css_selector('#id_search_category div.cate_list > a:nth-child(3)')
 # a3=driver.find_element_by_css_selector('id_search_category > table > tbody > tr:nth-child(1) > td > div > div:nth-child(1) > a:nth-child(2)')
-#id_search_category > table > tbody > tr:nth-child(1) > td > div > div:nth-child(1) > a:nth-child(10)
-# print(a2.text)
-# print(a2.get_attribute('href'))     # 속성값을 가져올때.
-# driver.execute_script(a2.get_attribute('href'))
+# id_search_category > table > tbody > tr:nth-child(1) > td > div > div:nth-child(1) > a:nth-child(10)
+print(a2.text)
+print(a2.get_attribute('href'))     # 속성값을 가져올때.
+driver.execute_script(a2.get_attribute('href'))
 
 #------------------------------------------------------------------
 
@@ -45,9 +45,9 @@ from  selenium.webdriver.common.keys import Keys        # 특수 키 사용
 # urllib.request.urlretrieve(url,filename)            # url 에 해당 되는 내용을 다운 받아라
 
 from urllib.parse import urlparse
-url='https://www.ml5.co.kr:1621/a502/index.html?student=14&area=60#title'
-pr=urlparse(url)    #네임드튜플 반환
-print(pr)
+# url='https://www.ml5.co.kr:1621/a502/index.html?student=14&area=60#title'
+# pr=urlparse(url)    #네임드튜플 반환
+# print(pr)
 # print(pr.scheme)    # http,ftp,....
 # print(pr.netloc)    # 포트 번호까지 따오기
 # print(pr.path)      # 경로
@@ -81,11 +81,11 @@ import os
 # if not os.path.exists('d:\\study\\pj1\\data2'):
 #     os.mkdir('d:\\study\\pj1\\data2')           # 폴더가 없으면 만들어라.
 
-a=[i for i in range(5)]
-print(a)
-b=['one','two','three']
-print(b)
-a=a+b
-print(a)
-a.append(b)
-print(a)
+# a=[i for i in range(5)]
+# print(a)
+# b=['one','two','three']
+# print(b)
+# a=a+b
+# print(a)
+# a.append(b)
+# print(a)
