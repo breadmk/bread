@@ -1,0 +1,92 @@
+project : geispan
+
+테이블  : gesipan
+
+항목)
+기본키 : id
+작성자 : name
+제 목 : title (text)
+내 용 : content (textarea)
+비 번 : pwd  (password)
+성 별 : sung (radio)
+취 미 : hobby (check box)
+년 도  : birth(select)
+작성일 : writhday
+
+명령 프롬포트 -> txt -> mysql -uroot -p1234 -> 확장자 .bat
+mysql -uroot -p1234
+use pkc 
+
+create table gesipan(
+id int auto_increment primary key,
+name char(10),
+title varchar(100),
+pwd char(10),
+content text,
+sung int,
+hobby varchar(20),
+birth char(4),
+writeday date
+);
+## radio , checkbox , value
+순서 -> write.jsp -> write_ok.jsp -> list.jsp
+
+list => 이름,제목,성별,작성일
+content => 이름,제목,내용,성별,취미,출생년도,작성일
+
+checked 속성 사용
+
+update => write 복사
+checked 속성 수정 => jsp 와 javasript  방법이 2개 있음.
+form 태그안에서 동일한 태그는 무조건 배열이다.
+
+< radio 태그 처리 방법 > 
+(document.폼name.[input]name)
+document.폼name.인풋name[<%=rs.getString("컬럼명")%>].checked =true;
+document.pkc.sung[<%=rs.getString("sung")%>].checked =true;
+
+
+
+========= , , , ,  로 구분 되면 무조건 split 사용하자 ==============
+
+< checkbox 태그 처리 방법 >
+
+var hob = "<%=rs.getString("hobby")%>"; //var hob = "0,5";
+		var hobby=hob.split(",");
+		for(i=0; i<hobby.length; i++){
+			document.pkc.hobby[hobby[i]].checked=true;
+		}
+		
+< select 태그 처리 방법 >
+value값 가져오기
+document.pkc.birth.value=<%=rs.getString("birth")%>;
+
+update_ok.jsp 만들어줄때,
+update에서 id 값을 만들어주고 , 가지고 가야 한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
