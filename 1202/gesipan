@@ -1,0 +1,152 @@
+project : geispan
+
+테이블  : gesipan
+
+항목)
+기본키 : id
+작성자 : name
+제 목 : title (text)
+내 용 : content (textarea)
+비 번 : pwd  (password)
+성 별 : sung (radio)
+취 미 : hobby (check box)
+년 도  : birth(select)
+작성일 : writhday
+
+명령 프롬포트 -> txt -> mysql -uroot -p1234 -> 확장자 .bat
+mysql -uroot -p1234
+use pkc 
+
+create table gesipan(
+id int auto_increment primary key,
+name char(10),
+title varchar(100),
+pwd char(10),
+content text,
+sung int,
+hobby varchar(20),
+birth char(4),
+writeday date
+);
+## radio , checkbox , value
+순서 -> write.jsp -> write_ok.jsp -> list.jsp -> content.jsp
+	->delete.jsp -> update.jsp -> update_ok.jsp
+
+list => 이름,제목,성별,작성일
+content => 이름,제목,내용,성별,취미,출생년도,작성일
+
+checked 속성 사용
+
+update => write 복사
+checked 속성 수정 => jsp 와 javasript  방법이 2개 있음.
+form 태그안에서 동일한 태그는 무조건 배열이다.
+
+< radio 태그 처리 방법 > 
+(document.폼name.[input]name)
+document.폼name.인풋name[<%=rs.getString("컬럼명")%>].checked =true;
+document.pkc.sung[<%=rs.getString("sung")%>].checked =true;
+
+
+
+========= , , , ,  로 구분 되면 무조건 split 사용하자 ==============
+
+< checkbox 태그 처리 방법 >
+
+var hob = "<%=rs.getString("hobby")%>"; //var hob = "0,5";
+		var hobby=hob.split(",");
+		for(i=0; i<hobby.length; i++){
+			document.pkc.hobby[hobby[i]].checked=true;
+		}
+		
+< select 태그 처리 방법 >
+value값 가져오기
+document.pkc.birth.value=<%=rs.getString("birth")%>;
+
+update_ok.jsp 만들어줄때,
+update에서 id 값을 만들어주고 , 가지고 가야 한다.
+
+쿼리
+select * from gesipan order by id desc limit 10; --맨뒤
+select * from gesipan order by id desc limit 10,10; --그다음페이지
+
+list.jsp  => 1페이지
+
+링크를 통해 페이지 이동
+1 2 3 4 5
+
+<a href="list.jsp?page=2">2</a>
+
+******** 페이징 처리 ************
+list.jsp => 1페이지 -> 0,10
+
+list.jsp?page=2 => 2페이지 => 20,10
+list.jsp?page=3 => 3페이지 => 30,10
+list.jsp?page=4 => 4페이지 => 40,10
+list.jsp?page=5 => 5페이지 => 50,10
+list.jsp?page=6 => 6페이지 => 60,10
+list.jsp?page=7 => 7페이지 => 70,10
+
+ int index;	//limit에 전달할 index값
+    int pager; //현재 나타내고자 하는 페이지 값을 저장 / page를 쓰고 싶은데 예약어라 사용 할 수 없음.
+    if(request.getParameter("pager")==null){	//list로 시작하면 뒤에 값이 없음
+    	pager=1;
+    }else{
+    	pager=Integer.parseInt(request.getParameter("pager"));
+    }
+    
+    //index 만들기
+    index=(pager-1)*10;
+	String id = request.getParameter("id");
+    //쿼리 생성
+//     String sql = "select * from gesipan order by id desc";
+    String sql = "select * from gesipan order by id desc limit "+index+",10";
+
+---------- 하단 페이지 처리 ---------------
+
+    현재페이지                 출력될 링크페이지
+ 1~10page     1~10페이지 값을 출력
+ 1 2 3 4 5 6 7 8 9 10  => 01
+ 
+ 11~20page    11~20페이지 값을 출력
+ 11~20  => 		11	
+ 11 12 13 14 15 16 17 18 19 20  => 11
+ 
+ 21~30page    21~30페이지 값을 출력
+ 21~30  => 		21
+
+ 31~40page    31~40페이지 값을 출력
+ 31~40  => 		31
+
+					?/10				Integer.parseInt
+1,2,3,4,5,6,7,8,9 			=> 0 => 0+"1" => 01
+11,12,13,14,15,16,17,18,19  => 1 => 1+"1" => 11
+21,22,23,24,25,26,27,28,29  => 2 => 2+"1" => 21
+
+	   ?/10		-1
+10 => 	1	>	0
+20 => 	2	>	1	
+30 => 	3	>	2
+40 => 	4	>	3
+
+현재 페이지가  
+
+21~30   				이전그룹 11~20   20으로 이동
+31~40   				이전그룹 21~30   30으로 이동
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
