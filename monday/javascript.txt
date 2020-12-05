@@ -1,0 +1,23 @@
+<dvi id="aa" 할아버지>
+	<div 어머니>
+		<div 나>
+		</div>
+	</div>
+</div>
+
+#aa div => 모든 div => 어머니, 나
+#aa > div => 자손 => 어머니
+
+문제: 메뉴만들기
+
+5가지의 주메뉴와 부메뉴를 만드시오.
+
+goalki@naver.com : 파일명에 이름을 적어주세요.
+
+<table class="table">
+					<tr><td>주식 vs 펀드</td></tr>
+					<tr><td>배당주와 기본용어</td></tr>
+					<tr><td>어떤 배당주가 좋은 배당주인가요?</td></tr>
+					<tr><td>상위 배당수익률</td></tr>
+					<tr><td>재무제표보는법</td></tr>
+				</table>
