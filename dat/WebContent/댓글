@@ -1,0 +1,131 @@
+게시판
+
+1. 페이징 처리
+2. 댓글
+3. Q&A (질문과 답)
+4. 자료게시판 => 여행후기(사진파일)
+5. 검색
+6. 비밀글
+
+세션처리....
+쿠키.....
+dao,dto
+
+jstl => core태그
+
+
+------------------------------
+
+댓글
+gesipan 프로젝트
+
+write.jsp
+write_ok.jsp
+list.jsp
+content.jsp
+
+ 
+dat 프로젝트
+
+write.jsp
+write_ok.jsp
+list.jsp
+content.jsp
+readnum.jsp
+
+모든내용의 저장 => gesipan 테이블에 저장
+여러개의 글이 저장되어 있음.
+
+댓글은 하나의 글에 대한 의견을 적는내용.
+댓글의 소스는 content.jsp에서 동작.
+
+댓글도 작은 게시판!!
+
+댓글입력
+댓글보이길
+댓글수정
+댓글삭제
+
+댓글 테이블 생성
+
+create table dat(
+id int auto_increment primary key,
+name char(10),
+content varchar(100),
+pwd char(10),
+writeday date,
+gid int				-- gesipan 테이블의 id	-- 원래는 foreign key 해야함.
+);
+
+댓글입력폼 어디? => content.jsp
+
+<input type="hidden" name="gid" value="<%=id%>">
+
+댓글 출력 => content.jsp
+
+댓글의 수정 및 삭제 => 새로운 버튼,링크
+
+새로운것이 기존 내용에서 처리
+작성자, 작성일 출력 => 이용
+
+작성일 클릭 => 삭제 기능 		비밀번호 체크(입력폼)
+작성자 클릭 => 수정 기능		비밀번호 체크
+
+
+action="dat_write_ok.jsp"
+action="dat_delete.jsp"
+action="dat_update_ok.jsp"
+
+----------------------------------------
+댓글의 입력, 수정, 삭제를 각각의 폼으로 작업
+content2.jsp 로 작업
+
+gesipan, board 에서 삭제 방식을 사용하셔도 무방.
+
+=>과제로 합니다 => content2.jsp 로 제출
+
+댓글 content 에서는 다른 방법을 사용한다.
+하나의 폼으로 3개의 역할 만들기 (자바스크립트 사용함 )
+function update() {	//폼태그의 성격을 수정으로 바꾼다.
+		//폼태그의 action 값을 => dat_update_ok.jsp로 변경
+		document.getElementById("pkc").action="dat_update_ok.jsp";
+		document.getElementById("submit").value="댓글수정";
+		// 댓글 달기 버튼의 text를 '댓글 수정'으로 변경
+	}
+
+content.jsp 에서 기존폼을 이용
+
+자바스크립트에서 처리.
+<form>
+	pwd,id값을 넘긴다.
+</form>
+dat_delete.jsp에선 dat테이블의 레코드를 삭제
+
+pwd, id 두개 필요.
+delete from dat where id=?;
+
+과제
+
+우리반 10명의 성적을 입력하고자 한다.
+
+과목: 국어, 영어, 수학, 과학 
+
+테이블 자유,
+필수 : id, 이름, 국어, 영어, 수학, 과학, 작성일
+
+1명씩 입력하는 문서 : input.jsp => input_ok.jsp로 저장
+10명의 성적을 출력하는 문서 : sung_virw.jsp를 생성.
+
+제출내용 : input.jsp input_ok.jsp, sung_view.jsp, 테이블 캡쳐사진, sung_view.jsp 화면캡쳐
+=> 1207_이름.zip 파일로 제출 => 네이버 카페에 올립니다.
+
+
+
+
+
+
+
+
+
+
+
