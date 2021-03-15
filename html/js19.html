@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+    .one {float:left;list-style:none;width:220px;height:300px;}
+    li img {width:200px;height:100px;}
+    .view {float:left;width:500px;height:300px;}
+    .view img {width:500px;height:300px;}
+</style>
+<script>
+function f1(i){
+    imgs=["../img/1.jpg","../img/2.jpg","../img/3.png"]
+    tag=document.getElementById("target")
+    tag.src=imgs[i]
+}
+</script>
+</head>
+<body>
+<ul class="one">
+    <li><a href="#" onclick="f1(0)"><img src="../img/1.jpg"></a></li>
+    <li><a href="#" onclick="f1(1)"><img src="../img/2.jpg"></a></li>
+    <li><a href="#" onclick="f1(2)"><img src="../img/3.png"></a></li>
+</ul>
+<div class="view">
+    <img src="../img/1.jpg" id="target">
+</div>
+</body>
+</html>

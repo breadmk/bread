@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<div class="one">첫번째 div
+    <p class="two">
+        두번째 p
+        <a href="1015-1.html" class="three">세번째 a</a>
+        <span class="four">네번째 span </span>
+        <a href="1015-2.html" class="five">다섯째 a</a>
+    </p>
+</div>
+<script>
+$('.one').click(function(){alert('첫번째 div')})
+$('.two').click(function(e){
+    alert('두번째 p')
+    e.stopPropagation();
+})
+$('.three').click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    alert('세번째 a')
+})
+$('.four').click(function(e){
+    alert('네번째 span1')
+    e.stopImmediatePropagation()
+})
+$('.four').click(function(e){
+    alert('네번째 span2')
+})
+$('.five').click(function(e){
+    alert('다섯째 a')
+    return false;
+})
+</script>
+
+<hr>
+<pre>
+이벤트 처리막기
+    1) e.preventDefault() : 고유동작 중단
+    2) e.stopPropagation() : 이벤트가 상위 전파 중지
+    3) e.stopImmediatePropagation() : 이벤트가 상위뿐 아니라 같은 레벨로도 전파 X
+    4) return false :
+       jquery 사용시 - e.stopPropagation() +e.preventDefault()
+       jquery 미사용시 - e.preventDefault()
+</pre>
+</body>
+</html>

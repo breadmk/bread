@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    i=1
+    $(function(){
+        //<div id=div?>
+        //    <span>첨부파일?</span>
+        //    <input type="file" name="file?" id="file1">
+        //    <input type="button" class="del" value="삭제">
+        //</div>
+        $('#add').click(function(){
+            if (i==5){alert('첨부파일은 5개까지');return;}
+            i++
+            div=$('<div>').attr('id','div'+i)
+            span=$('<span>').html('첨부파일'+i)
+            input1=$('<input>').attr('type',"file").attr('name',"file"+i ).attr('id',"file"+i)
+            input2=$('<input>').attr('type',"button").addClass('del').attr('value',"삭제")
+            div.append(span).append(input1).append(input2)
+            $('#container').append(div)
+        })
+        //$(document).on('이벤트','선택자',function(){})
+        $(document).on('click','.del',function(){
+            $(this).parent().remove()
+            i--
+        })
+   })
+
+
+
+    </script>
+</head>
+<body>
+<div id="container">
+    <H1>첨부파일</H1>
+    <div id="div1">
+        <input type="file" name="file1" id="file1">
+        <input type="button" id="add" value="추가">
+    </div>
+
+</div>
+</body>
+</html>

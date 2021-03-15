@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+    #one {width:200px;
+        height:200px;
+        background:red
+        }
+    #two {width:200px;
+        height:200px;
+        background:green
+        }
+</style>
+<script>
+/* 브라우져 제어를 위한 내장객체
+1)window객체:자바스크립트의 최상위객체
+내장객체 접근시 window.내장객체명.함수이름()
+모든 객체가 윈도우 안에 내장되어 있으므로 생략가능    내장객체명.함수이름()
+window.document.getElementById('id값')
+2)document객체 :html의 내용제어,css제어
+3)form객체
+4)image 객체
+5)location
+*/
+function f1(){
+    document.getElementById('one').style.backgroundColor='pink';
+}
+function f2(){
+    document.getElementById('one').style.backgroundColor='red';
+}
+</script>
+</head>
+<body>
+<h1>도큐먼트 객체</h1>
+<div id="one" class="first" onmouseover="f1()" onmouseout="f2()">테스트1번</div>
+<div id="two" class="first">테스트2번</div>
+</body>
+</html>

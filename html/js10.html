@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script>
+function f1(){
+    alert('클릭됨')
+}
+function f2(){
+    //alert('마우스가 들어옴')
+    //획득한 태그안에 새로운 내용 적용시 innerHTML
+    document.getElementById("result").innerHTML="60"
+}
+function f3(){
+    //alert('마우스가 나감')
+    document.getElementById("result").innerHTML="?"
+}
+</script>
+</head>
+<body>
+<pre>
+이벤트:특정 상황 발생시 호출되도록 사용자가 정의하는 특정한 동작(함수)
+사용방법
+    1)이벤트에서 사용할 함수정의
+    2)이벤트를 적용할 태그에 이벤트이름을 속성으로 하여 함수호출 구문작성
+</pre>
+<span onmouseover="f2()" onmouseout="f3()">10+50=</span>
+<span id="result">?</span>
+<hr>
+<input type="button" value="누르세요" onclick="f1()">
+</body>
+</html>

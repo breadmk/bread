@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<script>
+function idfocus(){
+    document.member.id.focus();
+}
+function emailchk(){
+    frm.id3.value=frm.email[frm.email.selectedIndex].value
+}
+function frmchk(){
+	//frm=document.member
+    if (frm.id.value.length<5){
+        alert("아이디는 5글자 이상입니다.")
+        frm.id.focus()
+        return false;
+    }
+    if (frm.pw.value.length<8){
+        alert("비밀번호는 8글자 이상입니다.")
+        frm.pw.focus()
+        return false;
+    }
+    if (frm.pw.value!=frm.pw1.value){
+        alert("비밀번호 확인을 정확히 입력하세요")
+        frm.pw1.value="";
+        frm.pw1.focus();
+        return;
+    }
+    /*alert(frm.email.selectedIndex)
+    if (frm.email.selectedIndex<1){
+        alert("이메일을 정확히 하세요")
+        return false;
+    }
+    //. 체크코드 필요*/
+    if (frm.id3.value.indexOf('.')==-1){
+        alert("이메일형식을 정확히 하세요")
+        return false;
+    }
+    //취미 선택여부 검사
+    //alert("취미의 길이="+frm.sel1.length)
+    sel1chk=false;
+    for (i=0;i<frm.sel1.length;i++){
+        if (frm.sel1[i].checked){
+            sel1chk=true;
+            break;
+        }
+    }
+    if(!sel1chk){
+        alert("취미를 1개이상 선택해 주세요")
+        return false;
+    }
+    //직업선택유무 확인
+    if (frm.job.selectedIndex<1){
+        alert("직업을 선택하세요")
+        return false;
+    }
+    if (confirm("가입하시겠습니까?")){
+        frm.submit();
+    }
+}
+function idchk(){
+    if (document.member.id.value.length>5)
+        alert('아이디는 5글자')
+}
+</script>
+</head>
+<body onload="idfocus()">
+<form name="member" action="1015-1.html" onsubmit="return false" method="post">
+<table width="800" border="1">
+        <tr>
+            <td colspan = "2" style="text-align:center">회원가입</td>
+        </tr>
+        <tr>
+            <td width="20%">사용자ID</td>
+            <td width="80%">
+<!--                <input type = "text" name = "id" maxlength="15"-->
+<!--                       onkeyup="idchk()">-->
+                <input type = "text" name = "id" maxlength="15"
+                       onblur="idchk()">
+                <input type = "button" value = "중복확인">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">비밀번호</td>
+            <td width="80%">
+                <input type = "password" name = "pw" maxlength="15">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">비밀번호확인</td>
+            <td width="80%">
+                <input type = "password" name = "pw1" maxlength="15">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">사용자이름</td>
+            <td width="80%">
+                <input type = "text" name = "userN" maxlength="15">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">주민등록번호</td>
+            <td width="80%">
+                <input type = "text" name = "birth1" maxlength="15"> -
+                <input type = "text" name = "birth2" maxlength="15">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">이메일</td>
+            <td width="80%">
+                <input type = "text" name = "email-Id" maxlength="10">@
+                <input type = "text" name = "id3" >
+                <select name ="email" onchange="emailchk()">
+                    <option value="" selected>직접입력</option>
+                    <option value="naver.com" >naver.com</option>
+                    <option value="gmail.com" >gmail.com</option>
+                    <option value="nate.com" >nate.com</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">취미</td>
+            <td width="80%">
+                    <input type="checkbox" name="sel1" value="등산">등산
+                    <input type="checkbox" name="sel1" value="낚시">낚시
+                    <input type="checkbox" name="sel1" value="여행">여행
+                    <input type="checkbox" name="sel1" value="독서">독서
+                    <input type="checkbox" name="sel1" value="기타">기타
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">주소</td>
+            <td width="80%">
+                <input type = "text" name = "addr1" maxlength="15">
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">직업</td>
+            <td width="80%">
+                <select name ="job">
+                    <option value="select1" selected>선택하세요</option>
+                    <option value="java" >자바개발자</option>
+                    <option value="python" >파이썬개발자</option>
+                    <option value="android" >안드로이드개발자</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td width="20%">자기소개</td>
+            <td width="80%">
+                <textarea rows="10" cols="60">간략히 작성하세요</textarea>
+            </td>
+        </tr>
+        <tr>
+            <td colspan = "2" style="text-align:center">
+                <input type = "submit" value = "회원가입" onclick="frmchk()">
+                <input type = "reset" value = "다시입력">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,52 @@
+html {font-size:10px;}
+body {font-size:2rem;}
+* {margin:0;box-sizing:border-box;}
+.container {
+max-width:1400px;
+margin:0 auto;
+background:yellow;
+}
+#header {background:white;
+        height:100px;
+        position:relative;
+        border:1px solid black;}
+.logo {position:absolute;
+        top:10px;
+        left:10px;
+}
+#nav  {background:red;}
+#nav::after{
+content:'';
+display:block;
+clear:both;
+}
+#menu  {background:pink;
+        float:left;
+        width:70%;
+        }
+li {display:inline;
+    padding:20px;}
+#search  {background:orange;
+        float:left;
+        width:30%
+}
+#content{clear:both;
+        background:blue;}
+#content::after{
+content:'';
+display:block;
+clear:both;}
+#laside {float:left;
+        width:15%;
+        background:purple}
+#main {float:left;
+        width:65%;
+        background:coral;}
+#raside {float:left;
+        width:20%;
+        background:green;}
+
+#footer {background:tomato;
+         clear:both;}
+
+

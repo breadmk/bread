@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+span, div {border:1px solid red}
+/*
+.one {
+    position:relative;
+    top:5px;
+}
+.two {
+    position:relative;
+    right:5px;
+}
+.three {
+    position:relative;
+    left:5px;
+}*/
+#second {
+    background:green;
+    width:300px;
+    height:300px;
+    position:relative;
+}
+#third{
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:blue;
+    right:0;
+}
+#first {
+    position:absolute;
+    width:100px;
+    height:100px;
+    background:purple;
+    right:0
+}
+#fourth{
+    width:300px;
+    height:300px;
+    background:grey;
+}
+#fifth{
+    background:pink;
+    position:fixed;
+    top:100px;
+    right:100px;
+}
+a {text-decoration:none;
+    color:black;}
+a:hover {color:yellow;font-weight:900;background:blue}
+a:visited {color:red;}
+a:active {color:pink}
+a:link {color:grey;}
+</style>
+</head>
+<body>
+<!--position:태그의 위치결정
+static:기본값
+relative :top,bottom,left,right 속성값사용
+          static인 상태를 기준으로 위치결정
+absolute :top,bottom,left,right 속성값사용
+          포지션이 static속성을 가지지 않는 부모를 기준으로 위치결정
+fixed    :항상 특정위치에 고정
+          top,bottom,left,right 속성값사용
+-->
+<!--<span class="one">span1</span>-->
+<!--<span class="two">span2</span>-->
+<!--<span class="three">span3</span>-->
+<!--<div>div</div>-->
+<!--<hr>-->
+<div id="fourth">
+    <div id="first">absolute1</div>
+</div>
+<div id="second">
+    <div id="third">absolute2</div>
+</div>
+<div>
+    <div id="fifth">fixed</div>
+</div>
+<hr>
+<a href="https://www.kbs.co.kr">KBS</a><br/>
+<a href="https://www.imbc.com">MBC</a><br/>
+<a href="https://www.sbs.co.kr">SBS</a><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+
+
+
+
+</body>
+</html>

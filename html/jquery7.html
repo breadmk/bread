@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+.enter {background:lime;}
+.one {color:blue}
+#detail {display:none}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<pre>
+$(선택자).addClass(클래스명)  클래스 적용
+$(선택자).removeClass(클래스명) 클래스 해제
+$(선택자).removeAttr(속성명)
+-----
+$(선택자).toggle([숫자])  :show()와 hide()를 반복처리
+$(선택자).show([숫자]) :표시
+$(선택자).hide([숫자]) :숨김
+숫자:지정된 시간동안 처리, 1/1000초
+</pre>
+<h1>케이블카</h1>
+<h3>설악산</h3>
+<h3>남산</h3>
+<h3>얼음골</h3>
+<h3>팔공산</h3>
+<h3>통영</h3>
+<script>
+/*    $('h3').hover(
+    function(){
+        $(this).css('background','lime')
+    },function(){
+        $(this).css('background','white')
+    })*/
+//-->내용,동작,모양 분리
+$('h3').hover(
+    function(){
+        $(this).addClass('enter')
+    },function(){
+        $(this).removeClass('enter')
+    }
+)
+</script>
+<hr>
+<h2 class="enter one">케이블카의 장점</h2>
+<script>
+//$('h2').removeClass('enter')
+//$('h2').removeClass()
+$('h2').removeAttr('class')
+</script>
+<a href="#" id="view">자세히 보기</a>
+<div id="detail">
+체력이 좋은 사람, 건강한 사람, 걸어서 산에 오를 수 있는 사람만 설악산 비경을 즐길 수 있어야 할까요?
+다리가 불편한 사람, 어르신들, 체력이 약한 사람, 어린이, 임산부, 기타 등등
+산을 걸어서 오르기에는 쉽지 않은 수많은 사람들도 높은 위치에 올라서 계절마다 비경을 뽐내는 설악산을 즐길 권리가 있다고 생각합니다.
+케이블카가 비록 지자체의 관광수익이 목적일지언정
+위와 같은 분명한 장점은 존재합니다.
+무조건 반대할 일은 아니라고 생각합니다.
+</div>
+<script>
+$('#view').click(function(){
+    $('#detail').toggle();
+})
+</script>
+<hr>
+<h1>show-hide</h1>
+<p>
+<input type="button" value="보이기" id="f1">
+<input type="button" value="숨기기" id="f2">
+<input type="button" value="토글" id="f3">
+</p>
+<div>
+    <img src="../img/2.jpg">
+</div>
+<script>
+$('#f1').click(function(){
+    $('div > img').show()
+})
+$('#f2').click(function(){
+    $('div > img').hide(3000)
+})
+$('#f3').click(function(){
+    $('div > img').toggle()
+})
+</script>
+<hr>
+<h1>fadeIn-slideDown 효과</h1>
+<p>
+<input type="button" value="보이기" id="f4">
+<input type="button" value="숨기기" id="f5">
+<input type="button" value="토글" id="f6">
+</p>
+<p id="one">
+    <img src="../img/1.jpg">
+</p>
+<script>
+$('#f4').click(function(){
+    //$('#one > img').fadeIn(2000);
+    $('#one > img').slideDown(2000);
+})
+$('#f5').click(function(){
+    //$('#one > img').fadeOut(2000);
+    $('#one > img').slideUp(2000);
+})
+$('#f6').click(function(){
+    //$('#one > img').fadeToggle(2000);
+    $('#one > img').slideToggle(2000);
+})
+</script>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

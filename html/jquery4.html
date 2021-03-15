@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<style>
+    #test {width:200px;height:50px;background:yellow}
+    #result {width:200px;height:50px;background:yellow}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+   /*$('#test').mouseenter(function(){
+        $('#result').html('마우스 들어옴')
+    })
+    $('#test').mouseleave(function(){
+        $('#result').html('마우스 나감')
+    })*/
+    //$('#test').hover(function(){},function(){}) //mouseenter,mouseleave
+    $('#test').hover(function(){
+        $('#result').html('마우스 들어옴')
+    },function(){
+         $('#result').html('마우스 나감')
+    })
+    $('#test').click(function(){
+        $('#result').html('마우스 클릭')
+    })
+    $('#test').dblclick(function(){
+        $('#result').html('마우스 더블클릭')
+    })
+    $('input[type="text"]').keydown(function(){
+        $('#result').html('키가 눌려짐')
+    })
+    $('input[type="text"]').keyup(function(){
+        $('#result').html('키를 뗌')
+    })
+/*    $('input[type="text"]').keypress(function(){   //keydown+keyup
+        $('#result').html('press')
+    })*/
+})
+</script>
+</head>
+<body>
+<h1>이벤트 확인</h1>
+<div id="test">
+    여기로 오세요~~
+</div>
+<hr>
+이름 : <input type="text" name="irum">
+
+<h1>이벤트 결과</h1>
+<div id="result">
+</div>
+
+
+
+</body>
+</html>

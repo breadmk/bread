@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script>
+//json(JavaScript Object Notation)
+//문법은 자바스크립트, 언어로부터 독립적
+//변수={키:값,키:값,...}
+/*
+a1={
+    'name':'둘리',
+    'age':5,
+    'gender':'남',
+    'visual':'귀여움'
+}
+document.write("<h3>"+a1.name+"</h3>")
+document.write("<h3>"+a1.age+"</h3>")
+document.write("<h3>"+a1.gender+"</h3>")
+document.write("<h3>"+a1.visual+"</h3>")*/
+function f1(){
+    a1={
+        name:'둘리',
+        'age':5,
+        'gender':'남',
+        'visual':'귀여움',
+        'family':['고길동','희동이','도너'],
+        'food':['떡복이','순대','튀김','오뎅']
+    }
+    document.getElementById("name").innerHTML=a1.name
+    document.getElementById("a").innerHTML=a1.age
+    //document.getElementById("fa").innerHTML=a1.family
+    str='<ul>';
+    for(i=0;i<a1.family.length;i++){
+        str=str+'<li>'+a1.family[i]+'</li>'
+    }
+    str=str+'</ul>'
+    //alert(str)
+    document.getElementById("fa").innerHTML=str
+    str='<ul>';
+    for(i=0;i<a1.food.length;i++){
+        str=str+'<li>'+a1.food[i]+'</li>'
+    }
+    str=str+'</ul>'
+    document.getElementById("fo").innerHTML=str
+}
+function f2(){
+    keyword={
+        'r1':{'k':'java','p':10000,'maxp':50000},
+        'r2':{'k':'python','p':3000,'maxp':30000},
+        'r3':{'k':'구로동자바','p':100,'maxp':10000},
+    }
+//    alert(keyword.r1)    //{'k':'java','p':10000,'maxp':50000}
+//    alert(keyword.r1.k)
+    str='<ul>'
+    str=str+'<li>'+keyword.r1.k+','+keyword.r1.p+','+keyword.r1.maxp+'</li>'
+    str=str+'<li>'+keyword.r2.k+','+keyword.r2.p+','+keyword.r2.maxp+'</li>'
+    str=str+'<li>'+keyword.r3.k+','+keyword.r3.p+','+keyword.r3.maxp+'</li></ul>'
+    document.getElementById('rank').innerHTML=str
+}
+function f3(){
+    board={
+        'title':'학습게시판',
+        'total':3,
+        'content':[
+            {'no':1,subject:'jquery는 언제하나요',view:2},
+            {no:2,subject:'html와 css',view:1},
+            {no:3,subject:'python',view:1}
+        ]
+    }
+    key1=Object.keys(board)   //json key값 추출
+    alert('board의 키들'+key1)
+    for(i=0;i<key1.length;i++)
+        alert(key1[i])
+    document.getElementById('title').innerHTML=board.title
+    document.getElementById('n').innerHTML=board.total
+    //board.content  [{},{},{}]
+    str='<ul>'
+    for(i=0;i<board.content.length;i++){
+        //alert(board.content[i])   //board.content[i]={}
+        str=str+'<li>'+board.content[i].no+','+board.content[i].subject+','
+            +board.content[i].view+'</li>'
+        //key2=Object.keys(board.content[i])
+        //alert(i+'content의 키 '+key2)
+    }
+    str=str+'</ul>'
+    document.getElementById('c').innerHTML=str
+
+}
+
+</script>
+</head>
+<!--<body onload="f1()">-->
+<!--<body onload="f2()">-->
+<body onload="f3()">
+<h1 id="name"></h1>
+<hr>
+<p><strong>외모 : </strong><span id="v"></span> </p>
+<p><strong>나이 : </strong><span id="a"></span> </p>
+<p><strong>가족 : </strong><span id="fa"></span> </p>
+<p><strong>음식 : </strong><span id="fo"></span> </p>
+<hr>
+<h1>검색어 순위</h1>
+<div id="rank"></div>
+<hr>
+<h1>공지사항</h1>
+<div id="title"></div>
+<div id="total">게시글: <span id="n"></span>>건</div>
+<div id="c"></div>
+</body>
+</html>
+
+
+
+
+
+
+

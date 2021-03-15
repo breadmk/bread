@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<p>내장산</p>
+<p>남산</p>
+<p>구름산</p>
+<script>
+console.log('html()-->'+$('p').html())
+console.log('text()-->'+$('p').text())
+</script>
+<hr>
+<div>
+    <p>한국의 가을은 산이 좋아요</p>
+</div>
+<div>
+    <p>한국의 가을은 강이 좋아요</p>
+</div>
+<script>
+//$('div').text('결국은 <strong>이쁘다</strong>는 말이네요')
+//$('div').html('결국은 <strong>이쁘다</strong>는 말이네요')
+alert($('div').text())
+alert($('div').html())
+</script>
+<pre>
+html(): 해당 엘리먼트의 첫번째 내용을 가져옴(each()사용), 태그인식
+text(): 해당 엘리먼트의 내용을 모두 가져옴, 태그인식X
+</pre>
+</body>
+</html>
+
+
+
+
+

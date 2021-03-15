@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    <script src="jquery-3.5.1.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        function f1(){alert('hi~ jquery')}
+        //jQuery(f1)
+        $('h1').html('환영합니다.')
+    </script>
+</head>
+<body>
+<h1>jQuery: 자바스크립트 라이브러리</h1>
+<h2 id="id1">작은제목1</h2>
+<h2 class="cl1">작은제목2</h2>
+<hr>
+<div class="cl2">
+    <p>자식,형제 선택자</p>
+    <h3>텔레토비 가족</h3>
+    <p>보라돌이</p>
+    <p>나나</p>
+    <p>뽀</p>
+</div>
+<hr>
+<input type="text" >회원번호
+<input type="password" >비밀번호
+<script>
+jQuery('h1').html('환영합니다.')
+$('h1').css('background','green').css('color','white')
+$('#id1').css('color','red')
+$('.cl1').css('color','blue')
+//자식선택자
+$('.cl2 > p').css('background','yellow')
+//형제선택자
+$('h3 + p').css('color','pink')   //h3다음의 형제문단 하나만
+$('h3 ~ p').css('background','orange')  //h3다음의 형제뒤의 모든 문단
+//속성선택자
+//$('input').css('background','grey')
+$('input[type=password]').css('background','purple')
+</script>
+
+<pre>
+jQuery: 자바스크립트 라이브러리
+--환경설정
+1)다운로드
+2)cdn:contents delivery network
+--
+document.getElementById('id값')-->$(선택자)
+innerHTML -> html()
+---
+jQuery의 모든 기능은 $객체가 가지고 있음
+$:jQuery의 모든 기능을 가진 객체이자 함수
+</pre>
+</body>
+</html>

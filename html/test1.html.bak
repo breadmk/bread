@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <h1 class="title">개인회원 상세정보입력</h1>
+    <div class="detail">
+        <ul>
+            <li>이름을 포함해 반드시 실명 데이터를 사용해야 합니다.</li>
+            <li>회원가입 시 허위로 정보를 기재하거나 타인의 정보를 도용하여 가입한 아이디는 법적인 보호를 받으실 수 없으며 서비스 이용에 제한을 받게 됩니다.</li>
+            <li>한번 부여된 ID는 변경할 수 없으니 신중하게 가입해 주시기 바랍니다.</li>
+            <li>전자신문인터넷은 회원님의 개인정보를 신중하게 보호하려 노력하고 있으며 회원님의 동의 없이는 기재하신 회원 정보가 누출되지 않습니다.</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+

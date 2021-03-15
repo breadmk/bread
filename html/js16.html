@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script>
+function timer(){
+    //변수=new Date() 시스템시간
+    //변수=new Date(년,월-1,일) 월0~11
+    now=new Date()
+    /*document.write("<h3>"+now+"</h3>")
+    document.write("<h3>"+now.getFullYear()+"</h3>")  //년
+    document.write("<h3>"+(now.getMonth()+1)+"월</h3>")  //월
+    document.write("<h3>"+now.getDate()+"</h3>")  //일
+    document.write("<h3>"+now.getDay()+"요일</h3>")  //0(일)~6(토요일)
+    days=['일','월','화','수','목','금','토']
+    document.write("<h3>"+days[now.getDay()]+"요일</h3>")  //0(일)~6(토요일)
+    document.write("<h3>"+now.getHours()+"</h3>")  //시
+    document.write("<h3>"+now.getMinutes()+"</h3>")  //분
+    document.write("<h3>"+now.getSeconds()+"</h3>")  //초*/
+    s=now.getHours()+":"+now.getMinutes()+":"+now.getSeconds()
+    //document.write(s)
+    document.getElementById('t').innerHTML=s
+}
+//setInterval(함수명,1/1000초단위)
+function autoTimer(){
+    setInterval(timer,1000)
+}
+</script>
+</head>
+<!--<body onload="timer()">-->
+<body onload="autoTimer()">
+<h1>12번가</h1>
+<hr>
+<div id="t"></div>
+
+
+
+
+
+
+</body>
+</html>

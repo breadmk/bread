@@ -1,0 +1,75 @@
+https://hangouts.google.com/call/g9o6aXW-j5a39Rgh7FB3ACEM
+--환경설정
+1)파이썬설치
+C:\Python\Python38
+2)파이참설치, 환경설정
+D:\study\html
+alt+1  프로젝트창
+ctrl+/ 주석
+
+--파일-셋팅즈-
+==웹페이지에 사용되는 기술=html5+css3+javascript(jquery)
+html:웹페이지구성
+css:스타일적용
+javascript:사용자반응처리
+==html기본구조 (*.html, *.htm)
+태그:요소를 만들때 사용하는 기호,
+    -시작태그와 끝태그가 존재 (<h1>내용  </h1>)
+    -단독으로 사용하는 태그
+    html5   <br>
+    xhtml   <br/>   <--개발자들이 선호
+---
+<!DOCTYPE html>    <!-- html5 임을 브라우져에게 알림 -->
+<html> <!-- html의 루트요소, lang 속성 입력가능 -->
+    <head>  <!-- body에 필요한 css3 또는 자바스크립트등 제공 -->
+        <title>html</title>
+    </head>
+    <body><!-- 사용자에게 실제보여지는 부분 -->
+    first homepage.
+    </body>
+</html>
+--기본태그
+br태그 : <br> 또는 <br/>
+p태그  : <p> 또는 <p/> 또는 <p>     </p>
+<hn>~<hn> :제목태그(줄바꿈포함) n=1~6
+글자모양태그
+<hr>
+<hr width="70" >
+<hr width="70%" >
+html의 색
+<!--<body bgcolor="yellow">-->
+<!--<body bgcolor="#c6f2cd">  --rgb 16진수값-->
+<body bgcolor="rgb(255,0,100)">  <!--rgb 값-->
+<font size= color=>
+특수문자
+공백 &nbsp;
+<   &lt;
+>   &gt;
+&   &amp;
+목록태그
+ol :ordered list
+ul :unordered list
+목록요소
+li : ol 또는 ul 의 자식요소로 사용
+--이미지태그<img />
+src : 그림경로
+alt : 그림이 없을때 나오는 글자
+width : 그림너비지정
+height : 그림높이 지정
+https://www.w3schools.com/
+-----------
+https://hangouts.google.com/call/objcXfN8zO7WyrZavkZkACEM
+-----d:\study\webst
+
+
+
+
+
+
+
+
+
+
+
+
+

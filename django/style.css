@@ -1,0 +1,182 @@
+html {font-size:10px}
+* {box-sizing:border-box;}
+body {font-size:1.5rem;
+    font-family: 'Roboto', sans-serif;}
+a {text-decoration:none;}
+.header {background:#003900;height:70px;}
+.container, .container-float {
+            max-width:1400px;
+          /*background:#003900;*/
+          margin:0 auto;
+          position:relative;
+          height:50px;
+          padding:10px 0;}
+.logo {position:absolute;
+        color:white;
+        top:0;left:0;
+        margin:0;
+        padding:0 0 0 20px;}
+.nav {text-align:right;}
+ul {list-style:none;}
+.list-item{display:inline;}
+header a {color:white;padding:10px;font-weight:700;}
+header a:hover {color:#669999}
+.main {/*background:yellow*/;
+}
+/* hero 영역 */
+.hero {/*background:#ffebcd;*/
+    text-align:center;
+    padding:50px 0 30px 0;
+    border-bottom:1px solid #669966;
+    height:400px;
+}
+.hero1{ 
+    font-size:3.5rem;
+    width:700px;
+    margin:30px auto;
+}
+/*
+.hero2{
+    display:block;
+    width:350px;
+    background:#44B78B;
+    margin:10px auto;
+    padding:20px;
+    border-radius:7px;
+    color:white;
+}
+<a href="#" class="hero2 main-hero2">Get started with Django</a>*/
+.hero2{
+    display:block;   /*크기가 적용되도록 */
+    background:#44B78B;
+    margin:10px auto;  /*가운데 정렬*/
+    padding:20px;   /* 버튼처럼 */
+    color:white;
+    font-weight:900;
+    border-radius:7px;  /*테두리 둥글게*/
+}
+.hero2.main-hero2{  /* 붙여서 쓰면 .hero2와 .main-hero2 이 모두 있는 경우 */
+    width:350px;
+}
+.hero2:hover{
+    background:#44B7ff;
+}
+.main-content {/*background:yellow;*/
+            float:left;width:70%}
+.main-title {font-size:3rem;}
+.mailing {/*background:pink;*/
+        float:left;
+        width:50%;
+}
+/*버튼의 위치기준*/
+.frm1 { position:relative;
+        margin:10px 0 30px 0;}
+.btn1{
+position:absolute;   /*기준이 되는 부모의 position 속성도 변경할것*/
+top:5px;
+right:15px;
+border:0;
+background:transparent;  /* 바탕색 투명 */
+cursor:pointer; /* 마우스 올리면 손가락 */
+}
+input {width:95%;
+    height:30px;
+    padding:5px 50px 5px 5px;
+    border : 1px solid green;
+}
+.mailing-layout::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.main-end {clear:both;}
+.side-content {background:#green;float:left;width:30%}
+/*1)main-content와 .side-content 의 부모로서 자리하지 못함. 부모에 가상요소를 주어 해제*/
+.container-float::after{
+    display:block;
+    content:'';
+    clear:both;
+}  /* container-float가 자식의 높이를 완벽히 가짐을 확인*/
+.container-side-cta{text-align:center;}
+.more {
+display:block;
+margin:30px 0 0 0
+font-size:1.5rem;
+font-weight:700;
+color:green;
+}
+.more::after{
+    content:'>';
+}
+.hero2.side-hero2{
+    width:400px;
+}
+.infos{
+margin:30px 0;
+}
+.infos-title{
+font-size:2rem;
+padding:0 0 20px 0;
+border-bottom:1px solid green;
+}
+.footer {
+        clear:both;  /*.2)main-content와 .side-content 의 플로트 영역으로 부터 독립적으로 나타냄*/
+}
+.footer1 {
+        background:grey;  /*.2)main-content와 .side-content 의 플로트 영역으로 부터 독립적으로 나타냄*/
+}
+.first{
+    float:left;
+    background:blue;
+    width:25%;
+}
+.second{
+    float:left;
+    background:blue;
+    width:25%;
+}
+.third{
+    float:left;
+    background:blue;
+    width:25%;
+}
+.fourth {
+    float:left;
+    background:blue;
+    width:25%;
+}
+.footer2 {
+        clear:both;
+        background:pink;  /*.2)main-content와 .side-content 의 플로트 영역으로 부터 독립적으로 나타냄*/
+        height:100px;
+}
+.two1{
+position:relative;
+}
+.two1::after{
+content:'';
+clear:both;
+display:block;
+}
+.a {float:left;
+    width:33%;
+    height:100px;
+    }
+.two2{clear:both;}
+/*
+1)웹폰트
+2)기본스타일이 브라우져별로 조금씩 다름, 이를 최소화 하기 위한 기법
+css reset
+css normallize 다운로드후     <link rel="stylesheet" href="normalize.css"/>
+*/
+
+
+
+
+
+
+
+
+
+
+
